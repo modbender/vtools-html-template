@@ -16,9 +16,25 @@ h6 {
   font-weight: 600;
 }
 
+/* Bootstrap Overrides */
 /* Colors */
-/* :root {
-} */
+:root {
+  --bs-primary: #6610f2;
+  --bs-primary-bg-subtle: #7b35eb;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+.bg-primary {
+  background-color: var(--bs-primary);
+}
 
 a {
   text-decoration: none;
@@ -63,6 +79,40 @@ a:hover {
   color: var(--bs-black);
 }
 
+/* Navbar Dropdown */
+.navbar .dropdown-menu {
+  border: 0;
+  padding: 1.8rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar .dropdown-menu ul {
+  padding: 0;
+  list-style: none;
+}
+
+.navbar .dropdown-menu a {
+  margin: 0.2rem 0;
+  padding: 0.75rem 1.4rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: var(--bs-gray-700);
+}
+
+.navbar .dropdown-menu a:hover {
+  color: var(--bs-black);
+}
+
+.navbar .dropdown-menu .subheader {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--bs-primary);
+  padding: 0 0 1rem 1.4rem;
+  margin-bottom: 1rem;
+  border-bottom: var(--bs-gray-200) 1px solid;
+}
+
+/* Breakpoint: md */
 @media (min-width: 992px) {
 }
 

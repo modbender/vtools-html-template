@@ -44,9 +44,34 @@
                   Tools
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li class="subheader">
+                    Video Downloader
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Youtube Video Downloader
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Facebook Video Downloader
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Instagram Video Downloader
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Twitter Video Downloader
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      TikTok Video Downloader
+                    </a>
+                  </li>
                 </ul>
               </li>
             </li>
@@ -112,7 +137,7 @@
           </div>
         </div>
       </div>
-      <hr class="my-5" />
+      <hr class="mt-5 mb-4" />
       <div class="container bottom">
         <div class="d-flex flex-wrap gap-3 mb-3 mb-md-0">
           <div class="me-md-3 mb-3 mb-md-0"> &copy; VTool. All rights reserved. </div>
@@ -198,7 +223,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const navDropdownElements = document.querySelectorAll(".nav-item .dropdown-toggle");
-        navDropdownElements.forEach((element) => {
+        navDropdownElements.forEach(function (element) {
           const dropdown = new bootstrap.Dropdown(element);
           console.log(dropdown);
           dropdown.addEventListener("mouseover", () => {
