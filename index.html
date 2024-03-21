@@ -36,14 +36,20 @@
         <div class="collapse navbar-collapse text-center" id="navbarNav">
           <ul class="navbar-nav mx-md-auto mb-4 mb-md-0 gap-3">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a 
+                  href="#" 
+                  role="button"
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                  class="nav-link dropdown-toggle"
+                >
                   Tools
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-menu-center">
                   <li class="subheader">
                     Video Downloader
                   </li>
@@ -83,7 +89,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Login</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ms-md-3">
               <a class="btn btn-primary text-white" href="#"> Sign Up </a>
             </li>
           </ul>
@@ -223,11 +229,37 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const navDropdownElements = document.querySelectorAll(".nav-item .dropdown-toggle");
+
         navDropdownElements.forEach(function (element) {
+          let menuLeave = false;
+          let toggleLeave = false;
+
           const dropdown = new bootstrap.Dropdown(element);
           console.log(dropdown);
-          dropdown.addEventListener("mouseover", () => {
+
+          function mouseLeaveHide(e){
+            if(menuLeave && toggleLeave){
+              dropdown.hide();
+            }
+          }
+
+          element.addEventListener("mouseover", () => {
+            toggleLeave = false;
             dropdown.show();
+          });
+
+          element.addEventListener("mouseleave", () => {
+            toggleLeave = true;
+            mouseLeaveHide()
+          });
+          
+          dropdown._menu.addEventListener("mouseover", () => {
+            menuLeave = false;
+            mouseLeaveHide();
+          });
+          dropdown._menu.addEventListener("mouseleave", () => {
+            menuLeave = true;
+            mouseLeaveHide();
           });
         });
       });
