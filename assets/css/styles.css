@@ -62,7 +62,7 @@ a:hover {
   z-index: 999;
   height: var(--header-height);
   border-bottom: 1px solid #f2f4f7;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .navbar-brand {
@@ -91,7 +91,6 @@ a:hover {
 
 /* Navbar Dropdown */
 .navbar .dropdown-menu {
-  top: 35px;
   border: 0;
   padding: 1.8rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
